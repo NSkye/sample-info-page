@@ -29,6 +29,15 @@ export default {
 </style>
 
 <style lang="stylus">
+  @import './variables'
+  // 1rem = 10px with most common screen resolutions
+  html
+    font-size 10px
+    @media (max-width $desktopBreak)
+      font-size 7px
+      @media (max-width $mobileBreak)
+        font-size 9px
+
   body
     font-family 'Roboto', 'Helvetica', Arial, sans-serif
 </style>

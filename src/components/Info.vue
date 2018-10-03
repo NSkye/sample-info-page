@@ -48,13 +48,13 @@ export default {
   flex 3 3 738px
   height 100%
   min-width 475px
-  padding-top 35px
+  padding-top 3.5rem
   background-color white
   @media (max-width $mobileBreak)
     justify-content flex-start
-    padding-top 5px
-    padding-left 15px
-    padding-right 15px
+    padding-top .5rem
+    padding-left 1.5rem
+    padding-right 1.5rem
     width 100%
     min-width 0
     height auto
@@ -62,15 +62,15 @@ export default {
   &__contents
     width 100%
   &__logo
-    margin-left 97.7px
+    margin-left 9.77rem
     @media (max-width $mobileBreak)
       position absolute
       margin 0
-      top 15px
-      left 15px
+      top 1.5rem
+      left 1.5rem
   &__navigation
-    margin-left 97.7px
-    margin-top 62.3px
+    margin-left 9.77rem
+    margin-top 6.77rem
     @media (max-width $mobileBreak)
       position absolute
       top 0
@@ -84,19 +84,19 @@ export default {
       justify-content center
       display none
   &__city-list
-    margin-bottom 72px
+    margin-bottom 7.2rem
     @media (max-width $mobileBreak)
-      margin-bottom 20px
+      margin-bottom 2rem
   &__footer
     display flex
     flex-direction column
   &__contacts
-    margin-left 97.7px
-    margin-bottom 30px
+    margin-left 9.77rem
+    margin-bottom 3rem
     @media (max-width $mobileBreak)
-      margin-left 30px
+      margin-left 3rem
   &__social-links
-    margin-left 97.7px
+    margin-left 9.77rem
     max-width 40%
     margin-bottom 35px
     @media (max-width $mobileBreak)

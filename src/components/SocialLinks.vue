@@ -26,10 +26,10 @@ export default {
   display flex
   flex-direction row
   justify-content space-between
-  height 26px
+  height 2.6rem
   &__item
     height 100%
-    width 26px
+    width 2.6rem
     &>a
       height 100%
       width 100%

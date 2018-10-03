@@ -7,7 +7,6 @@
 @import '../variables'
 
 .map
-  flex-grow 7
   flex 7 1 1822px
   background-color #4a4a4a
   height 100%

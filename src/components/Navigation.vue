@@ -24,9 +24,9 @@ export default {
 @import '../variables'
 
 .navigation
-  font-size 21.3px
-  line-height 46.7px
-  letter-spacing 2.67px
+  font-size 2.13rem
+  line-height 4.67rem
+  letter-spacing .267rem
   &__list
     destyle-list()
   &__item

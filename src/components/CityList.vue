@@ -32,10 +32,10 @@ export default {
   @media (max-width $mobileBreak)
     flex-direction row
   &__item
-    margin-bottom 24px
+    margin-bottom 2.4rem
     @media (max-width $mobileBreak)
       margin-bottom 0
-      margin-right 15px
+      margin-right 1.5rem
     &:last-child
       margin-bottom 0
       @media (max-width $mobileBreak)

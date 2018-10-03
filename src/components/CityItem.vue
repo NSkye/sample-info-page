@@ -27,19 +27,19 @@ export default {
   position relative
   box-sizing border-box
   width 100%
-  font-size 16px
-  line-height 24px
-  letter-spacing 0.2px
+  font-size 1.6rem
+  line-height 2.4rem
+  letter-spacing .02rem
   font-weight 300
   @media (max-width $mobileBreak)
     width auto
-    font-size 12px
-    line-height 18px
+    font-size 1.2rem
+    line-height 1.8rem
     letter-spacing auto
   &__logo
     position absolute
     top 0
-    left 39px
+    left 3.9rem
     height 1.6em
     width 1.6em
     @media (max-width $mobileBreak)
@@ -52,15 +52,15 @@ export default {
     transform translate(-100%, -20%)
     @media (max-width $mobileBreak)
       shape-triangle-alt(1em, 1em, white)
-      transform translate(-15%, calc(-100% - 4px))
+      transform translate(-15%, calc(-100% - .4rem))
 
 .address
-  margin-left 97.7px
+  margin-left 9.77rem
   @media (max-width $mobileBreak)
-    margin-left 30px
+    margin-left 3rem
   &__name
     position relative
     font-weight 400
   @media (max-width  $mobileBreak)
-    font-size 12px
+    font-size 1.2rem
 </style>
