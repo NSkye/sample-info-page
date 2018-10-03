@@ -40,4 +40,5 @@ export default {
 
   body
     font-family 'Roboto', 'Helvetica', Arial, sans-serif
+    overflow-x hidden
 </style>

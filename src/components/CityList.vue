@@ -1,7 +1,7 @@
 <template>
   <ul class="city-list">
-    <li v-for="item in addresses" :key='item.name' class="city-list__item">
-      <CityItem :item='item' />
+    <li v-for="(item, index) in addresses" :key='index' class="city-list__item">
+      <CityItem :item='item' :itemKey='index' />
     </li>
   </ul>
 </template>

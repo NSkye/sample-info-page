@@ -1,11 +1,6 @@
 <template>
   <div class="info">
-    <div class="info__aside">
-      <div class="info__logo">
-        <img v-bind:src='logo.file' v-once alt='HPMD LOGO'>
-      </div>
-      <Navigation class='info__navigation' />
-    </div>
+    <Header class="info__header"/>
     <div class="info__contents">
       <CityList class="info__city-list" />
       <footer class="info__footer">
@@ -17,23 +12,19 @@
 </template>
 
 <script>
-import { logo } from '../app.config'
-import Navigation from './Navigation'
+import Header from './Header'
 import CityList from './CityList'
 import Contacts from './Contacts'
 import SocialLinks from './SocialLinks'
+import NavButton from './NavButton'
 
 export default {
-  data () {
-    return {
-      logo
-    }
-  },
   components: {
-    Navigation,
+    Header,
     CityList,
     Contacts,
-    SocialLinks
+    SocialLinks,
+    NavButton
   }
 }
 </script>
@@ -61,28 +52,6 @@ export default {
     min-height 40%
   &__contents
     width 100%
-  &__logo
-    margin-left 9.77rem
-    @media (max-width $mobileBreak)
-      position absolute
-      margin 0
-      top 1.5rem
-      left 1.5rem
-  &__navigation
-    margin-left 9.77rem
-    margin-top 6.77rem
-    @media (max-width $mobileBreak)
-      position absolute
-      top 0
-      left 0
-      margin 0
-      width 100%
-      height 100%
-      background white
-      display flex
-      align-items center
-      justify-content center
-      display none
   &__city-list
     margin-bottom 7.2rem
     @media (max-width $mobileBreak)

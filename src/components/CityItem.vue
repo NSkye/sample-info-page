@@ -14,7 +14,8 @@
 <script>
 export default {
   props: {
-    item: Object
+    item: Object,
+    itemKey: Number
   }
 }
 </script>
