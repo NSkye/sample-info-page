@@ -1,0 +1,43 @@
+<template>
+  <ul class="city-list">
+    <li v-for="item in addresses" :key='item.name' class="city-list__item">
+      <CityItem :item='item' />
+    </li>
+  </ul>
+</template>
+
+<script>
+import CityItem from './CityItem'
+import { addresses } from '../app.config'
+
+export default {
+  data () {
+    return {
+      addresses
+    }
+  },
+  components: {
+    CityItem
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+@import '../variables'
+
+.city-list
+  display flex
+  flex-direction column
+  destyle-list()
+  @media (max-width $mobileBreak)
+    flex-direction row
+  &__item
+    margin-bottom 24px
+    @media (max-width $mobileBreak)
+      margin-bottom 0
+      margin-right 15px
+    &:last-child
+      margin-bottom 0
+      @media (max-width $mobileBreak)
+        margin-right 0
+</style>

@@ -1,0 +1,33 @@
+$mobileBreak = 970px
+$desktopBreak = 1366px
+
+destyle-list()
+  list-style none
+  padding 0
+  margin 0
+
+multiply(a,b) 
+  a * b
+
+subtract(a=0,b)
+  a - b
+
+center-vertically()
+  top 0
+  bottom 0
+  margin auto
+
+shape-triangle(h, w, c=white)
+  width 0
+  height 0
+  border-top h solid transparent
+  border-right w solid c
+  border-bottom h solid transparent
+
+shape-triangle-alt(h, w, c=white)
+  width 0
+  height 0
+  border-bottom h solid c
+  border-right w solid transparent
+  border-left w solid transparent
+  border-top none

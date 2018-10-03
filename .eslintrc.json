@@ -31,6 +31,9 @@
     ],
     "eqeqeq": [
       "off"
+    ],
+    "vue/no-unused-components": [
+      "off"
     ]
   }
 }
