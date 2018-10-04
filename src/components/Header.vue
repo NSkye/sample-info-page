@@ -50,29 +50,29 @@ export default {
 @import '../variables'
 
 .header
+  margin-left 9.77rem
+  @media (max-width $mobileBreak)
+    margin 0
   &__logo
-    margin-left 9.77rem
     display flex
     @media (max-width $mobileBreak)
       position fixed
-      margin 0
       top 1.5rem
       left 1.5rem
       z-index 2
   &__navigation
-    margin-left 9.77rem
     margin-top 6.77rem
     @media (max-width $mobileBreak)
       position fixed
+      display flex
+      align-items center
+      justify-content center
       top 0
       left 0
       margin 0
       width 100vw
       height 100vh
       background rgba(255,255,255,1)
-      display flex
-      align-items center
-      justify-content center
       z-index 1
 
 .nav-in-enter-active

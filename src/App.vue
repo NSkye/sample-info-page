@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <Map></Map>
-    <Info></Info>
+    <Map />
+    <Info />
   </div>
 </template>
 
