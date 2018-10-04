@@ -1,7 +1,7 @@
 /**
  * Loads external script for Yandex.Maps.
- * Returns promise that resolves with Yandex.Maps API object.
- * @param {String} src URL скрипта
+ * Returns promise that resolves with Yandex.Maps API object or rejects with specified error.
+ * @param {String} src Yandex.Maps script URL, example: https://api-maps.yandex.ru/2.1/?lang=en_US
  * @returns {Promise}
  */
 export function loadMaps (src) {
