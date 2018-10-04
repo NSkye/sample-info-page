@@ -34,7 +34,8 @@ export const addresses = [
       },
       phone: "+7 (812) 240-43-35",
       street: "196158, наб. Обводного канала 199",
-      building: "'Обводный двор', офис 3 'А'"
+      building: "'Обводный двор', офис 3 'А'",
+      default: true
   }
 ]
 

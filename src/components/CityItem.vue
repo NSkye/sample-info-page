@@ -1,8 +1,8 @@
 <template>
   <div class="city-item">
-    <img class="city-item__logo" v-bind:src="item.city.logo" alt="logo">
-    <div class="city-item__triangle"></div>
-    <div class="address">
+    <img class="city-item__logo" v-bind:src="item.city.logo" v-bind:alt="item.city.name">
+    <div v-show='isSelected' class="city-item__triangle"></div>
+    <div class="address" v-bind:class="{['address--selected']: isSelected}">
       <div class="address__name"><span class="address__contents">{{ item.city.name }}</span></div>
       <div class="address__phone"><span class="address__contents">{{ item.phone }}</span></div>
       <div class="address__stret"><span class="address__contents">{{ item.street }}</span></div>
@@ -13,6 +13,16 @@
 
 <script>
 export default {
+  data () {
+    return {
+      isSelected: false
+    }
+  },
+  mounted () {
+    if (this.item.default) {
+      this.isSelected = true
+    }
+  },
   props: {
     item: Object,
     itemKey: Number
@@ -32,6 +42,7 @@ export default {
   line-height 2.4rem
   letter-spacing .02rem
   font-weight 300
+  cursor pointer
   @media (max-width $mobileBreak)
     width auto
     font-size 1.2rem
@@ -59,6 +70,8 @@ export default {
   margin-left 9.77rem
   @media (max-width $mobileBreak)
     margin-left 3rem
+  &--selected
+    font-weight 400
   &__name
     position relative
     font-weight 400
