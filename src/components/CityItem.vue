@@ -1,8 +1,8 @@
 <template>
-  <div class='city-item'>
+  <div class='city-item' v-on:click='selectThisItem'>
     <img class='city-item__logo' v-bind:src='item.city.logo' v-bind:alt='item.city.name'>
-    <div v-show='isSelected' class='city-item__triangle'></div>
-    <div class='address' v-bind:class='{["address--selected"]: isSelected}'>
+    <div v-show='getCityItemState(itemKey)' class='city-item__triangle' />
+    <div class='address' v-bind:class='{ ["address--selected"]: (getCityItemState(itemKey)) }'>
       <div class='address__name'><span class='address__contents'>{{ item.city.name }}</span></div>
       <div class='address__phone'><span class='address__contents'>{{ item.phone }}</span></div>
       <div class='address__stret'><span class='address__contents'>{{ item.street }}</span></div>
@@ -12,15 +12,29 @@
 </template>
 
 <script>
+import { mapMutations, mapGetters } from 'vuex'
+
 export default {
-  data () {
-    return {
-      isSelected: false
-    }
-  },
   mounted () {
-    if (this.item.default) {
-      this.isSelected = true
+    // add this item to global state upon mounting
+    this.addCityItem({ key: this.itemKey, selected: this.item.default })
+  },
+  computed: {
+    ...mapGetters([
+      'getCityItemState'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'addCityItem',
+      'selectCityItem'
+    ]),
+    /**
+     * Marks this item as selected in Vuex store. If item is already selected, the store won't be mutated
+     */
+    selectThisItem () {
+      const { getCityItemState, itemKey, selectCityItem } = this
+      return !getCityItemState(itemKey) && selectCityItem(itemKey)
     }
   },
   props: {
