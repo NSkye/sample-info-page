@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { loadMaps } from '../libs/ymaps'
+import { loadMaps } from 'libs/ymaps'
 
 export default {
   data () {
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 .map
   flex 7 1 1822px

@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import Header from './Header'
-import CityList from './CityList'
-import Contacts from './Contacts'
-import SocialLinks from './SocialLinks'
-import NavButton from './NavButton'
+import Header from 'components/Header'
+import CityList from 'components/CityList'
+import Contacts from 'components/Contacts'
+import SocialLinks from 'components/SocialLinks'
+import NavButton from 'components/NavButton'
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 .info
   box-sizing border-box
   display flex

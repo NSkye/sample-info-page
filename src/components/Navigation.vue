@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { navigation } from '../app.config'
+import { navigation } from 'config'
 
 export default {
   data () {
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 .navigation
   font-size 2.13rem

@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import './fonts/Roboto/stylesheet.css'
-import Map from './components/Map'
-import Info from './components/Info'
+import 'fonts/Roboto/stylesheet.css'
+import Map from 'components/Map'
+import Info from 'components/Info'
 
 export default {
   components: {
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  @import './variables'
+  @import '~@/variables'
   .main
     display flex
     flex-direction row
@@ -29,7 +29,7 @@ export default {
 </style>
 
 <style lang="stylus">
-  @import './variables'
+  @import '~@/variables'
   // 1rem = 10px with most common screen resolutions
   html
     font-size 10px

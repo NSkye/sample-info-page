@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 $time = .2s
 d2(a)

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import CityItem from './CityItem'
-import { addresses } from '../app.config'
+import CityItem from 'components/CityItem'
+import { addresses } from 'config'
 
 export default {
   data () {
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 .city-list
   display flex

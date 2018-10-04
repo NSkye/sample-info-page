@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { socialInformation } from '../app.config'
+import { socialInformation } from 'config'
 
 export default {
   data () {
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 .social-info
   destyle-list()

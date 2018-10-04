@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import { logo } from '../app.config'
-import Navigation from './Navigation'
-import NavButton from './NavButton'
+import { logo } from 'config'
+import Navigation from 'components/Navigation'
+import NavButton from 'components/NavButton'
 
 export default {
   data () {
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../variables'
+@import '~@/variables'
 
 .header
   margin-left 9.77rem
