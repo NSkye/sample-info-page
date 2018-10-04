@@ -1,7 +1,7 @@
 <template>
-  <ul class="social-info">
-    <li class="social-info__item" v-for='(item, index) in socialInformation' :key='index'>
-      <a v-bind:href="item.link"><img v-bind:src="item.logo" v-bind:alt="item.name"></a>
+  <ul class='social-info'>
+    <li class='social-info__item' v-for='(item, index) in socialInformation' :key='index'>
+      <a v-bind:href='item.link'><img v-bind:src='item.logo' v-bind:alt='item.name'></a>
     </li>
   </ul>
 </template>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .social-info

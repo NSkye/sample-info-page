@@ -1,6 +1,6 @@
 <template>
-  <ul class="city-list">
-    <li v-for="(item, index) in addresses" :key='index' class="city-list__item">
+  <ul class='city-list'>
+    <li v-for='(item, index) in addresses' :key='index' class='city-list__item'>
       <CityItem :item='item' :itemKey='index' />
     </li>
   </ul>
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .city-list

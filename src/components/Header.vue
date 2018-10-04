@@ -1,6 +1,6 @@
 <template>
-  <header class="header">
-    <div class="header__logo">
+  <header class='header'>
+    <div class='header__logo'>
       <NavButton v-on:click.native='handleNavButton' :active='navIsOpen' /><img v-bind:src='logo.file' v-once alt='HPMD Network'>
     </div>
     <transition name='nav-in'>
@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .header

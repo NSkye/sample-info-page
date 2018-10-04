@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class='main'>
     <Map />
     <Info />
   </div>
@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
   @import '~@/variables'
   .main
     display flex
@@ -28,7 +28,7 @@ export default {
       flex-direction column
 </style>
 
-<style lang="stylus">
+<style lang='stylus'>
   @import '~@/variables'
   // 1rem = 10px with most common screen resolutions
   html

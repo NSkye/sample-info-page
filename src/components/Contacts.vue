@@ -1,6 +1,6 @@
 <template>
-  <div class="contact-info">
-    <p v-for='(item, index) in contactInformation' v-bind:key='index' v-html='item' class="contact-info__item"></p>
+  <div class='contact-info'>
+    <p v-for='(item, index) in contactInformation' v-bind:key='index' v-html='item' class='contact-info__item'></p>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .contact-info

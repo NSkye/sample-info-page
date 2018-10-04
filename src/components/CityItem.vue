@@ -1,12 +1,12 @@
 <template>
-  <div class="city-item">
-    <img class="city-item__logo" v-bind:src="item.city.logo" v-bind:alt="item.city.name">
-    <div v-show='isSelected' class="city-item__triangle"></div>
-    <div class="address" v-bind:class="{['address--selected']: isSelected}">
-      <div class="address__name"><span class="address__contents">{{ item.city.name }}</span></div>
-      <div class="address__phone"><span class="address__contents">{{ item.phone }}</span></div>
-      <div class="address__stret"><span class="address__contents">{{ item.street }}</span></div>
-      <div class="address__building"><span class="address__contents">{{ item.building }}</span></div>
+  <div class='city-item'>
+    <img class='city-item__logo' v-bind:src='item.city.logo' v-bind:alt='item.city.name'>
+    <div v-show='isSelected' class='city-item__triangle'></div>
+    <div class='address' v-bind:class='{["address--selected"]: isSelected}'>
+      <div class='address__name'><span class='address__contents'>{{ item.city.name }}</span></div>
+      <div class='address__phone'><span class='address__contents'>{{ item.phone }}</span></div>
+      <div class='address__stret'><span class='address__contents'>{{ item.street }}</span></div>
+      <div class='address__building'><span class='address__contents'>{{ item.building }}</span></div>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .city-item

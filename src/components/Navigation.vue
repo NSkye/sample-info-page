@@ -1,8 +1,8 @@
 <template>
-  <nav class="navigation">
-    <ul class="navigation__list">
-      <li v-for='(item, index) in navigation' v-bind:key='index' class="navigation__item">
-        <a v-bind:href='item.link' class="navigation__link" v-bind:class="item.link == '/' ? 'navigation__link--current' : ''"> {{ item.name }} </a>
+  <nav class='navigation'>
+    <ul class='navigation__list'>
+      <li v-for='(item, index) in navigation' v-bind:key='index' class='navigation__item'>
+        <a v-bind:href='item.link' class='navigation__link' v-bind:class='item.link == "/" ? "navigation__link--current" : ""'> {{ item.name }} </a>
       </li>
     </ul>
   </nav>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .navigation

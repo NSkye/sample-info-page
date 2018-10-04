@@ -1,11 +1,11 @@
 <template>
-  <div class="info">
-    <Header class="info__header"/>
-    <div class="info__contents">
-      <CityList class="info__city-list" />
-      <footer class="info__footer">
-        <Contacts class="info__contacts" />
-        <SocialLinks class="info__social-links" />
+  <div class='info'>
+    <Header class='info__header'/>
+    <div class='info__contents'>
+      <CityList class='info__city-list' />
+      <footer class='info__footer'>
+        <Contacts class='info__contacts' />
+        <SocialLinks class='info__social-links' />
       </footer>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 .info
   box-sizing border-box

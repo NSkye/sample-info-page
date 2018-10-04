@@ -34,7 +34,7 @@ module.exports = {
        * This rule will ensure that ESLint runs against every .js and .vue file before its being transformed and included in bundle
        */
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.(js|vue)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader'

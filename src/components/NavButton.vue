@@ -1,6 +1,6 @@
 <template>
-  <div role="button" aria-label="navigation" class="menu-button" v-bind:class="{ ['menu-button--active']: active }">
-    <div class="menu-button__element"></div>
+  <div role='button' aria-label='navigation' class='menu-button' v-bind:class='{ ["menu-button--active"]: active }'>
+    <div class='menu-button__element'></div>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 $time = .2s

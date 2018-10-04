@@ -1,7 +1,7 @@
 <template>
-  <div class="map" ref='map'>
-    <div v-if='showFallback' class="map__fallback">
-      <span class="map__fallback-caption">К сожалению, в данный момент карта недоступна, приносим свои извинения.</span>
+  <div class='map' ref='map'>
+    <div v-if='showFallback' class='map__fallback'>
+      <span class='map__fallback-caption'>К сожалению, в данный момент карта недоступна, приносим свои извинения.</span>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 @import '~@/variables'
 
 .map
