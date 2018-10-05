@@ -12,12 +12,21 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters } from 'vuex'
+import { mapMutations, mapGetters, mapActions } from 'vuex'
 
 export default {
   mounted () {
     // add this item to global state upon mounting
-    this.addCityItem({ key: this.itemKey, selected: this.item.default })
+    // this.addCityItem({ key: this.itemKey, selected: this.item.default })
+    this.provideCityItem({
+      key: this.itemKey,
+      selected: !!this.item.default,
+      address: {
+        city: this.item.city.name,
+        street: (this.item.street || ''),
+        building: (this.item.building || '')
+      }
+    })
   },
   computed: {
     ...mapGetters([
@@ -28,6 +37,9 @@ export default {
     ...mapMutations([
       'addCityItem',
       'selectCityItem'
+    ]),
+    ...mapActions([
+      'provideCityItem'
     ]),
     /**
      * Marks this item as selected in Vuex store. If item is already selected, the store won't be mutated

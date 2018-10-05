@@ -8,6 +8,7 @@
 
 <script>
 import { loadMaps } from 'libs/ymaps'
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -15,6 +16,11 @@ export default {
       mapInstance: null,
       showFallback: false
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getMapFocus'
+    ])
   },
   async mounted () {
     try {
@@ -24,6 +30,11 @@ export default {
       return this.displayFallback()
     }
   },
+  watch: {
+    getMapFocus: function () {
+      this.mapInstance && this.getMapFocus && this.mapInstance.setCenter(this.getMapFocus, 12)
+    }
+  },
   methods: {
     displayFallback () {
       this.showFallback = true
@@ -31,8 +42,8 @@ export default {
     displayMap (ymaps) {
       // Create map instance with default parameters and assign it to a container
       this.mapInstance = new ymaps.Map(this.$refs.map, {
-        center: [55.76, 37.64],
-        zoom: 13,
+        center: this.getMapFocus || [55.76, 37.64],
+        zoom: 12,
         controls: []
       })
       // Style map according to design

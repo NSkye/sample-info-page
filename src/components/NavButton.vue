@@ -8,9 +8,6 @@
 export default {
   props: {
     active: Boolean
-  },
-  created () {
-    console.log(this.active)
   }
 }
 </script>
