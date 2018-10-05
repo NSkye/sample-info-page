@@ -33,10 +33,12 @@ export default {
   // 1rem = 10px with most common screen resolutions
   html
     font-size 10px
-    @media (max-width $desktopBreak)
-      font-size 7px
-      @media (max-width $mobileBreak)
-        font-size 9px
+    @media (max-height $desktopHeightBreak) and (min-width $mobileBreak + 1px)
+      font-size 1.075vh
+    @media (max-width $mobileBreak)
+      font-size 13px
+      @media (max-width $smallerMobileBreak)
+        font-size 2.92vw
 
   body
     font-family 'Roboto', 'Helvetica', Arial, sans-serif
