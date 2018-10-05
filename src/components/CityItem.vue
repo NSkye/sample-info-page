@@ -17,7 +17,6 @@ import { mapMutations, mapGetters, mapActions } from 'vuex'
 export default {
   mounted () {
     // add this item to global state upon mounting
-    // this.addCityItem({ key: this.itemKey, selected: this.item.default })
     this.provideCityItem({
       key: this.itemKey,
       selected: !!this.item.default,
