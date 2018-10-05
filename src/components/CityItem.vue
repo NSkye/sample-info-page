@@ -20,6 +20,7 @@ export default {
     this.provideCityItem({
       key: this.itemKey,
       selected: !!this.item.default,
+      icon: this.item.city.logo,
       address: {
         city: this.item.city.name,
         street: (this.item.street || ''),

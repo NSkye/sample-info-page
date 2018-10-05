@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import { loadMaps } from 'libs/ymaps'
+import { loadMaps, openBalloon } from 'libs/ymaps'
+import { logo } from 'config'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -19,20 +20,30 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getMapFocus'
-    ])
+      'getDisplayedBalloon'
+    ]),
+    balloonContents () {
+      const icon = this.getDisplayedBalloon.icon
+      return `
+        <div class='balloon-contents'>
+          <img class='balloon-contents__icon' src='${icon}' alt='city emblem'>
+          <img class='balloon-contents__logo' src='${logo.file}' alt='HPMD Network'>
+        </div>
+      `
+    }
   },
   async mounted () {
     try {
       this.displayMap(await loadMaps('https://api-maps.yandex.ru/2.1/?lang=ru_RU'))
+      this.displayBalloon()
     } catch (e) {
       console.log('Failed to load maps: ', e)
       return this.displayFallback()
     }
   },
   watch: {
-    getMapFocus: function () {
-      this.mapInstance && this.getMapFocus && this.mapInstance.setCenter(this.getMapFocus, 12)
+    getDisplayedBalloon: function () {
+      this.displayBalloon()
     }
   },
   methods: {
@@ -52,10 +63,37 @@ export default {
         .get('ground')
         .getElement()
         .style.filter = 'grayscale(100%) brightness(20%)'
+    },
+    displayBalloon () {
+      if (!this.mapInstance || !this.getDisplayedBalloon) { return null }
+      const { coordinates, icon } = this.getDisplayedBalloon
+      this.mapInstance.setCenter(coordinates, 12)
+      openBalloon(this.mapInstance, coordinates, this.balloonContents, icon)
     }
   }
 }
 </script>
+
+<style lang='stylus'>
+.balloon-contents
+  position relative
+  display flex
+  box-sizing border-box
+  flex-direction column
+  justify-content flex-end
+  align-items center
+  height 100px
+  width 185px
+  padding-bottom 8px
+  &__icon
+    position absolute
+    top 0
+    left 0
+    height 20%
+    transform translate(-100%, 0)
+  &__logo
+    width 80%
+</style>
 
 <style lang='stylus' scoped>
 @import '~@/variables'

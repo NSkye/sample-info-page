@@ -20,3 +20,16 @@ export function getCityItemState (state) {
 export function getMapFocus (state) {
   return state.mapFocus
 }
+
+/**
+ * Returns icon and coordinates for balloon that should be displayed right now
+ * @param {Object} state Vuex state
+ */
+export function getDisplayedBalloon (state) {
+  const item = state.cityItems.find(i => i.selected)
+  if (!item) {
+    return null
+  }
+  const { lat, lon, icon } = item
+  return { icon, coordinates: [ lat, lon ] }
+}

@@ -8,8 +8,8 @@ import Vue from 'vue'
  * @param {Number} itemData.key city list item's unique key
  * @param {Boolean} itemData.selected city list item's initial selection status
  */
-export function addCityItem (state, { key, selected }) {
-  state.cityItems.push({ key, selected: !!selected })
+export function addCityItem (state, { key, selected, icon }) {
+  state.cityItems.push({ key, icon, selected: !!selected })
 }
 /**
  * Adds provided coordinates to the specified item object.
@@ -25,7 +25,6 @@ export function addCoordinatesToItem (state, { key, lat, lon }) {
     if (item.key == key) {
       Vue.set(state.cityItems[index], 'lat', lat)
       Vue.set(state.cityItems[index], 'lon', lon)
-      item.selected && (state.mapFocus = [ item.lat, item.lon ])
     }
   })
 }
@@ -39,6 +38,5 @@ export function selectCityItem (state, key) {
   state.cityItems.map(item => {
     const selected = item.key == key
     item.selected = selected
-    selected && item.lat && item.lon && (state.mapFocus = [ item.lat, item.lon ])
   })
 }
