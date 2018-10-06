@@ -42,7 +42,7 @@ export default {
       'provideCityItem'
     ]),
     /**
-     * Marks this item as selected in Vuex store. If item is already selected, the store won't be mutated
+     * Marks this item as selected in Vuex store. If item is already selected, the store won't be mutated ergo map won't be recalculated.
      */
     selectThisItem () {
       const { getCityItemState, itemKey, selectCityItem } = this

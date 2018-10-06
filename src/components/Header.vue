@@ -27,6 +27,11 @@ export default {
     NavButton
   },
   methods: {
+    /**
+     * Determines whether or not Navigation should be displayed.
+     * Navigation will always be displayed on desktop versions.
+     * On mobile versions it will be displayed only when it's open.
+     */
     setNavStatus () {
       if (window.innerWidth > 970 || this.navIsOpen) {
         this.navShouldBeVisible = true
@@ -34,11 +39,19 @@ export default {
         this.navShouldBeVisible = false
       }
     },
+    /**
+     * Opens or closes navigation.
+     */
     handleNavButton () {
       this.navIsOpen = !this.navIsOpen
       this.setNavStatus()
     }
   },
+  /**
+   * Upon component creation determine whether or not nav should be displayed and
+   * start listening to window resizing so we can display or hide navigation based on
+   * screen resolution.
+   */
   created () {
     this.setNavStatus()
     window.addEventListener('resize', this.setNavStatus)

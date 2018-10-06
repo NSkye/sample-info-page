@@ -22,6 +22,9 @@ export default {
     ...mapGetters([
       'getDisplayedBalloon'
     ]),
+    /**
+     * Generates balloon content based on currently selected city through Vuex getters.
+     */
     balloonContents () {
       const icon = this.getDisplayedBalloon.icon
       return `
@@ -32,10 +35,14 @@ export default {
       `
     }
   },
+  /**
+   * Load map via Yandex Maps API and display it or fallback if request failed.
+   */
   async mounted () {
     try {
       this.displayMap(await loadMaps('https://api-maps.yandex.ru/2.1/?lang=ru_RU'))
       this.displayBalloon()
+      // Prevent window scaling when user wants to scale the map
       this.$refs.map.addEventListener('touchmove', e => e.preventDefault())
     } catch (e) {
       console.log('Failed to load maps: ', e)
@@ -43,14 +50,23 @@ export default {
     }
   },
   watch: {
+    /**
+     * Watch when user selects another to display appropriate balloon
+     */
     getDisplayedBalloon: function () {
       this.displayBalloon()
     }
   },
   methods: {
+    /**
+     * Display fallback when map can not load, this action is non-reversable
+     */
     displayFallback () {
       this.showFallback = true
     },
+    /**
+     * Display map in the component and set needed parameters to it
+     */
     displayMap (ymaps) {
       // Create map instance with default parameters and assign it to a container
       this.mapInstance = new ymaps.Map(this.$refs.map, {
@@ -65,6 +81,9 @@ export default {
         .getElement()
         .style.filter = 'grayscale(100%) brightness(20%)'
     },
+    /**
+     * Display a different balloon
+     */
     displayBalloon () {
       if (!this.mapInstance || !this.getDisplayedBalloon) { return null }
       const { coordinates, icon } = this.getDisplayedBalloon
