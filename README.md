@@ -1,6 +1,7 @@
 Тестовое задание для компании [Head &amp; Hands](https://handh.ru/) | Test case for company [Heads &amp; Hands](https://handh.ru/)
 
 Посмотреть собранную версию: [nskye.github.io/sample-info-page/](https://nskye.github.io/sample-info-page/)  
+Посмотреть скриншоты на различных разрешениях можно [тут](https://github.com/NSkye/sample-info-page/tree/master/screenshots),  моему устройству соответствует [1920x1080](https://github.com/NSkye/sample-info-page/blob/master/screenshots/desktop_1920x1080.png)   
 Код с русскоязычными комментариями: ветка [ru_comments](https://github.com/NSkye/sample-info-page/tree/ru_comments)  
 
 Разрабатывалось из-под Manjaro, так что, из-под Linux точно будет собираться и работать как надо.  
