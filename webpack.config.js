@@ -20,13 +20,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader']
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.styl(us)?$/,
         use: [
           'vue-style-loader',
           'css-loader',
+          'postcss-loader',
           'stylus-loader'
         ]
       },
@@ -87,7 +88,9 @@ module.exports = {
    * Enables hot module replacement for dev server
    */
   devServer: {
-    hot: true
+    hot: true,
+    host: '0.0.0.0',
+    port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({

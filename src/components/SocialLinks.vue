@@ -27,6 +27,7 @@ export default {
   flex-direction row
   justify-content space-between
   height 2.6rem
+  user-select none
   &__item
     height 100%
     width 2.6rem

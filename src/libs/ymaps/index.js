@@ -21,6 +21,7 @@ export function loadMaps (src) {
     }
     mapsScript.setAttribute('type', 'text/javascript')
     mapsScript.setAttribute('src', src)
+    mapsScript.setAttribute('crossorigin', 'anonymous')
     document.head.appendChild(mapsScript)
   })
 }
@@ -33,7 +34,9 @@ export function loadMaps (src) {
  */
 export async function calculateCoordinates (query) {
   query = encodeURIComponent(query)
-  const response = await fetch(`https://geocode-maps.yandex.ru/1.x/?geocode=${query}&results=1&format=json`)
+  const response = await fetch(`https://geocode-maps.yandex.ru/1.x/?geocode=${query}&results=1&format=json`, {
+    mode: 'cors'
+  })
   const data = await response.json()
   const geoObjects = data.response.GeoObjectCollection.featureMember
   if (!geoObjects.length) {

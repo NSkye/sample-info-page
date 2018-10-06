@@ -13,13 +13,6 @@ export function getCityItemState (state) {
     return item ? item.selected : false
   }
 }
-/**
- * Provides latitude and longitude on which map should be focused right now
- * @param {Object} state Vuex state
- */
-export function getMapFocus (state) {
-  return state.mapFocus
-}
 
 /**
  * Returns icon and coordinates for balloon that should be displayed right now

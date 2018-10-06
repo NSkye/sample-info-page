@@ -9,8 +9,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    cityItems: [],
-    mapFocus: null
+    cityItems: []
   },
   mutations,
   getters,

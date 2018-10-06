@@ -27,6 +27,7 @@ export default {
   font-size 2.13rem
   line-height 4.67rem
   letter-spacing .267rem
+  user-select none
   &__list
     destyle-list()
   &__item

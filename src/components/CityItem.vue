@@ -80,6 +80,7 @@ export default {
     left 3.9rem
     height 1.6em
     width 1.6em
+    user-select none
     @media (max-width $mobileBreak)
       left 0
   &__triangle

@@ -36,6 +36,7 @@ export default {
     try {
       this.displayMap(await loadMaps('https://api-maps.yandex.ru/2.1/?lang=ru_RU'))
       this.displayBalloon()
+      this.$refs.map.addEventListener('touchmove', e => e.preventDefault())
     } catch (e) {
       console.log('Failed to load maps: ', e)
       return this.displayFallback()
@@ -74,27 +75,6 @@ export default {
 }
 </script>
 
-<style lang='stylus'>
-.balloon-contents
-  position relative
-  display flex
-  box-sizing border-box
-  flex-direction column
-  justify-content flex-end
-  align-items center
-  height 100px
-  width 185px
-  padding-bottom 8px
-  &__icon
-    position absolute
-    top 0
-    left 0
-    height 20%
-    transform translate(-100%, 0)
-  &__logo
-    width 80%
-</style>
-
 <style lang='stylus' scoped>
 @import '~@/variables'
 
@@ -117,4 +97,29 @@ export default {
     text-shadow 0 1px 0 rgba(255, 255, 255, 0.1)
   &__fallback-caption
     max-width 80%
+</style>
+
+<style lang='stylus'>
+.balloon-contents
+  position relative
+  display flex
+  box-sizing border-box
+  flex-direction column
+  justify-content flex-end
+  align-items center
+  height 100px
+  width 185px
+  padding-bottom 8px
+  pointer-events none
+  &__icon
+    position absolute
+    top 0
+    left 0
+    height 20%
+    transform translate(-100%, 0)
+  &__logo
+    width 80%
+
+.ymaps-2-1-69-image-with-content
+  pointer-events none
 </style>
