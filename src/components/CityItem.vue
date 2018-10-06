@@ -16,7 +16,7 @@ import { mapMutations, mapGetters, mapActions } from 'vuex'
 
 export default {
   mounted () {
-    // add this item to global state upon mounting
+    // добавляем итем списка в глобальное состояние после маунтинга
     this.provideCityItem({
       key: this.itemKey,
       selected: !!this.item.default,
@@ -42,7 +42,7 @@ export default {
       'provideCityItem'
     ]),
     /**
-     * Marks this item as selected in Vuex store. If item is already selected, the store won't be mutated ergo map won't be recalculated.
+     * Отмечает итем списка как выбранный в Vuex store. Если итем уже выбран, то состояние не будет мутировано, следовательна не будет произвдеен ненужный перерассчет карты.
      */
     selectThisItem () {
       const { getCityItemState, itemKey, selectCityItem } = this

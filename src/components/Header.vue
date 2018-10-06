@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     /**
-     * Determines whether or not Navigation should be displayed.
-     * Navigation will always be displayed on desktop versions.
-     * On mobile versions it will be displayed only when it's open.
+     * Определяет должна ли отображаться навигация.
+     * Навигация всегда отображается на десктопных версиях.
+     * На мобильных версиях навигация отображается только когда она открыта.
      */
     setNavStatus () {
       if (window.innerWidth > 970 || this.navIsOpen) {
@@ -40,7 +40,7 @@ export default {
       }
     },
     /**
-     * Opens or closes navigation.
+     * Открывает/закрывает навигацию.
      */
     handleNavButton () {
       this.navIsOpen = !this.navIsOpen
@@ -48,9 +48,8 @@ export default {
     }
   },
   /**
-   * Upon component creation determine whether or not nav should be displayed and
-   * start listening to window resizing so we can display or hide navigation based on
-   * screen resolution.
+   * Определяем должна ли будет отображаться навигация при создании компонента,
+   * затем слушаем событие ресайзинга окна и поправляем навигацию на нем, если она может отобразиться неправильно.
    */
   created () {
     this.setNavStatus()

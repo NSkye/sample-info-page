@@ -30,7 +30,7 @@ export default {
 
 <style lang='stylus'>
   @import '~@/variables'
-  // 1rem = 10px with most common screen resolutions
+  // 1rem = 10px на большинстве десктопных экранов
   html
     font-size 10px
     @media (max-height $desktopHeightBreak) and (min-width $mobileBreak + 1px)

@@ -1,7 +1,9 @@
 import { calculateCoordinates } from 'libs/ymaps'
 
 /**
- * Adds city item to list with its coordinates if possible
+ * Добавляет в стейт адрес вместе с его координатами (если это возможно)
+ * В глобальном стейте хранится только ключ элемента списка, выбран он или нет и адрес иконки, 
+ * этого достаточно, чтоб компоненты карты и списка могли синхронизироваться.
  */
 export async function provideCityItem ({ commit }, { key, selected, address, icon }) {
   commit('addCityItem', { key, selected, icon })

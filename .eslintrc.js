@@ -6,14 +6,14 @@ module.exports = {
     'es6': true
   },
   /**
-   * Enabling standard.js ruleset (https://standardjs.com/)
+   * Подключение сета правил standard.js (https://standardjs.com/)
    */
   'extends': [
     'standard',
     'plugin:vue/essential'
   ],
   /**
-   * Allows to process vue files
+   * Позволяет работать с .vue файлами
    */
   'plugins': [
     'vue'
@@ -25,7 +25,7 @@ module.exports = {
   },
   'rules': {
     /**
-     * Needs to be specified as by default SwitchCase is set to 0 and it's quite hard to read
+     * Нужно указывать, т.к. по умолчанию SwitchCase не имеет дополнительных отступов, что делает его весьма трудночитаемым
      */
     'indent': [
       'error',
@@ -38,13 +38,13 @@ module.exports = {
       'unix'
     ],
     /**
-     * I hardly remember when I made this kind of mistake, so I prefer to use == when it's acceptable, just looks cleaner to me
+     * Не припомню, когда я делал подобные ошибки, поэтому предпочитаю использовать == когда это приемлемо, мне кажется, что так получается чище
      */
     'eqeqeq': [
       'off'
     ],
     /**
-     * This rule is set to error by default and its really buggy so it fires literally always, even when component is actually being used
+     * Это правило забаговано и не работает, оно выстреливает даже тогда, когда нет неиспользуемых компонентов
      */
     'vue/no-unused-components': [
       'off'

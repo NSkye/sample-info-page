@@ -1,24 +1,24 @@
 import Vue from 'vue'
 
 /**
- * Adds city item to global state, which always contains 2 values: item's unique key and whether or not item should be selected right now.
- * Situationally can contain another 2 values: lat, lon as result of other mutations.
+ * Добавляет итем списка адресов в глобальное состояние, оно всегда содержит 2 значения: уникальный ключ итема и выбран ли этот элемент прямо сейчас
+ * В зависимости от ситуации может содержать ещё 2 значения: широту и долготу, но они появляются в результате других мутаций
  * @param {Object} state Vuex state
  * @param {Object} itemData
- * @param {Number} itemData.key city list item's unique key
- * @param {Boolean} itemData.selected city list item's initial selection status
+ * @param {Number} itemData.key уникальный ключ итема списка адресов
+ * @param {Boolean} itemData.selected выбран итем сейчас или нет
  */
 export function addCityItem (state, { key, selected, icon }) {
   state.cityItems.push({ key, icon, selected: !!selected })
 }
 /**
- * Adds provided coordinates to the specified item object.
- * If item object at this moment is selected either by user or by default, the map will focus on those coordinates.
+ * Добавляет координаты итему в глобальном состоянии.
+ * Если итем в момент добавления выбран, то карта на нем сразу же сфокусируется
  * @param {Object} state Vuex state
  * @param {Object} itemData
- * @param {Number} itemData.key city list item's unique key
- * @param {Number} itemData.lat latitude
- * @param {Number} itemData.lon longitude
+ * @param {Number} itemData.key уникальный ключ итема списка адресов
+ * @param {Number} itemData.lat широта
+ * @param {Number} itemData.lon долгота
  */
 export function addCoordinatesToItem (state, { key, lat, lon }) {
   state.cityItems.map((item, index) => {

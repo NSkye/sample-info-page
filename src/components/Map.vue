@@ -23,7 +23,8 @@ export default {
       'getDisplayedBalloon'
     ]),
     /**
-     * Generates balloon content based on currently selected city through Vuex getters.
+     * Генерирует содержимое балуна на основе выбранного на данный момент города.
+     * (просто подставляет нужную иконку)
      */
     balloonContents () {
       const icon = this.getDisplayedBalloon.icon
@@ -36,13 +37,13 @@ export default {
     }
   },
   /**
-   * Load map via Yandex Maps API and display it or fallback if request failed.
+   * После манута загрузжает карты через API Яндекс Карт. При невозможности загрузки карт выводит фоллбэк.
    */
   async mounted () {
     try {
       this.displayMap(await loadMaps('https://api-maps.yandex.ru/2.1/?lang=ru_RU'))
       this.displayBalloon()
-      // Prevent window scaling when user wants to scale the map
+      // Предотвращает масштабирование окна браузера, когда пользователь взаимодействует с картой со смартфона.
       this.$refs.map.addEventListener('touchmove', e => e.preventDefault())
     } catch (e) {
       console.log('Failed to load maps: ', e)
@@ -51,7 +52,7 @@ export default {
   },
   watch: {
     /**
-     * Watch when user selects another to display appropriate balloon
+     * Отслеживание выбора пользователем другого города, а соответственно, другого балуна для отображения.
      */
     getDisplayedBalloon: function () {
       this.displayBalloon()
@@ -59,22 +60,24 @@ export default {
   },
   methods: {
     /**
-     * Display fallback when map can not load, this action is non-reversable
+     * Вывести на месте карты фоллбэк, вызывается когда не удалось загрузить карту.
+     * Если было выполнено, то уже обратить не получится.
      */
     displayFallback () {
       this.showFallback = true
     },
     /**
-     * Display map in the component and set needed parameters to it
+     * Вывести загруженную карту в нужном компоненте и передать ей требуемые параметры.
+     * @param {Object} ymaps API-объект карт
      */
     displayMap (ymaps) {
-      // Create map instance with default parameters and assign it to a container
+      // Создание инстанса карты с нужными параметрами и привязка её к соответствующему контейнеру.
       this.mapInstance = new ymaps.Map(this.$refs.map, {
         center: this.getMapFocus || [55.76, 37.64],
         zoom: 12,
         controls: []
       })
-      // Style map according to design
+      // Стилизация карты.
       this.mapInstance
         .panes
         .get('ground')
@@ -82,7 +85,7 @@ export default {
         .style.filter = 'grayscale(100%) brightness(20%)'
     },
     /**
-     * Display a different balloon
+     * Вывести другой балун.
      */
     displayBalloon () {
       if (!this.mapInstance || !this.getDisplayedBalloon) { return null }

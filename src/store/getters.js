@@ -1,11 +1,11 @@
 /**
- * Provides function with which we can access selection status of specific city list item
+ * Предоставляет функцию, через которую можно узнать выбран ли заданный итем в списке адресов
  * @param {Object} state Vuex state
  * @returns {Function}
  */
 export function getCityItemState (state) {
   /**
-   * @param {Number} key city list item's unique key
+   * @param {Number} key уникальный ключ итема списка
    * @returns {Boolean}
    */
   return key => {
@@ -15,7 +15,7 @@ export function getCityItemState (state) {
 }
 
 /**
- * Returns icon and coordinates for balloon that should be displayed right now
+ * Возвращает иконку и координаты балуна, который должен сейчас отображаться на карте
  * @param {Object} state Vuex state
  */
 export function getDisplayedBalloon (state) {

@@ -7,11 +7,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   /**
-   * There's no specification for entry point and output folder as they are by default src/index.js and dist/ respectively
+   * Entry point и output не указываем, т.к. по умолчанию, они и так src/index.js и dist/
    */
   module: {
     /**
-     * File rules
+     * Правила загрузчиков
      */
     rules: [
       {
@@ -32,7 +32,7 @@ module.exports = {
         ]
       },
       /**
-       * This rule will ensure that ESLint runs against every .js and .vue file before its being transformed and included in bundle
+       * Это правило нужно, чтобы ESLint проверил каждый .vue и .js файл прежде чем он будет обработан другими загрузчиками
        */
       {
         enforce: 'pre',
@@ -46,9 +46,6 @@ module.exports = {
           loader: 'html-loader'
         }]
       },
-      /**
-       * Place fonts in seperate directory within build
-       */
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
@@ -67,13 +64,13 @@ module.exports = {
   },
   resolve: {
     /**
-     * Allows to import .js and .vue files without specifying extensions
+     * Позволяет импортировать .js и .vue файлы без указания расширения
      */
     extensions: ['.js', '.vue'],
     /**
-     * Provides global paths for more convenient access to frequently used directories, 
-     * e.g. for accessing libs folder from a component we can write just 'libs' instead of '../libs'
-     * and to access any folder in src we now just simply have to type '@/[folder name]' instead of specifiying exact number of directories we have to go up
+     * Позволяет проще получать доступ к наиболее используемым папкам, 
+     * например, чтоб получить доступ к папке libs из компонента достаточно написать 'libs' вместо '../libs'
+     * и чтобы получить доступ к любой папке в src, достаточно набрать '@/[название папки]'
      */
     alias: {
       'components': path.resolve(__dirname, 'src/components'),
@@ -84,9 +81,6 @@ module.exports = {
       '@': path.resolve(__dirname, 'src')
     }
   },
-  /**
-   * Enables hot module replacement for dev server
-   */
   devServer: {
     hot: true,
     host: '0.0.0.0',

@@ -1,8 +1,8 @@
 /**
- * Deployes balloon in specified location
- * @param {Object} mapInstance Yandex Maps map instance
- * @param {Array} coordinates coordinates ([lat, lon])
- * @param {String} contents contents of the balloon
+ * Открывает балун на нажных координатах на карте
+ * @param {Object} mapInstance Инстанс Яндекс Карт
+ * @param {Array} coordinates координаты ([lat, lon])
+ * @param {String} contents содержимое балуна
  */
 export function openBalloon (mapInstance, coordinates, contents) {
   const balloonImage = require('assets/b.svg')

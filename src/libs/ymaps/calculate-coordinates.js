@@ -1,7 +1,7 @@
 /**
- * Gets location coordinates from its name through Yandex Geocode API.
- * Returns promise that resolves either in null or in [lat, lon] array.
- * @param {String} query location name
+ * Определяет координаты места по его названию через Yandex Geocode API.
+ * Возвращает промис, который резолвится либо в null, либо в массив широты-долготы [lat, lon].
+ * @param {String} query название места
  * @returns {Promise}
  */
 export async function calculateCoordinates (query) {
